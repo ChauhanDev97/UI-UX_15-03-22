@@ -11,6 +11,10 @@ body {
   height: 100%;
 }
 
+#fnav {
+  display: none;
+}
+
 .container {
   width: 100%;
   height: 100%;
@@ -95,7 +99,7 @@ ul > li:nth-child(1) {
   color: #3e58c6;
 }
 
-nav > .fnav {
+#menu {
   display: none;
 }
 
@@ -134,7 +138,7 @@ nav > .fnav {
   color: rgb(99, 99, 99);
 }
 
-.bt >div> button {
+.bt > div > button {
   cursor: pointer;
   padding: 0.7vmax;
   border: 1px solid rgb(207, 207, 207);
@@ -143,7 +147,7 @@ nav > .fnav {
   border-radius: 5px;
 }
 
-.bt >div> button:nth-child(2) {
+.bt > div > button:nth-child(2) {
   border-color: #3e58c6;
   font-weight: 500;
   color: #3e58c6;
@@ -177,6 +181,7 @@ nav > .fnav {
 }
 
 @media screen and (max-width: 600px) {
+
   nav > .navlink {
     width: 100px;
     display: flex;
@@ -184,25 +189,17 @@ nav > .fnav {
   }
 
   .navlink > ul,
-  .btn {
+  .btn>button {
     display: none;
   }
 
-  nav > .fnav {
-    display: inline;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 50px;
-    height: inherit;
-  }
-
-  .fnav > i {
-    font-weight: 500;
+  #menu {
+    font-weight: 800;
     color: #3e58c6;
+    display: initial;
   }
 
-  .main{
+  .main {
     display: flex;
     justify-content: space-between;
     position: relative;
@@ -210,7 +207,7 @@ nav > .fnav {
     flex-direction: column;
   }
 
-  .main>.right{
+  .main > .right {
     width: 100%;
     height: 50%;
     left: 50%;
@@ -218,8 +215,8 @@ nav > .fnav {
     transform: translate(-50%, -100%);
     position: absolute;
   }
-  
-  .main>.left{
+
+  .main > .left {
     width: 100%;
     height: 36%;
     /* background-color: red; */
@@ -232,7 +229,7 @@ nav > .fnav {
     position: absolute;
   }
 
-  .left > div{
+  .left > div {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -240,15 +237,15 @@ nav > .fnav {
     height: 100%;
   }
 
-  .left>div>h1{
+  .left > div > h1 {
     font-size: 30px;
   }
 
-  .left>div>p{
+  .left > div > p {
     font-size: 12px;
   }
 
-  .left>div>.bt{
+  .left > div > .bt {
     width: 300px;
     display: flex;
     flex-direction: column;
@@ -256,23 +253,93 @@ nav > .fnav {
     justify-content: space-between;
   }
 
-  .bt>div{
+  .bt > div {
     display: flex;
     align-items: center;
     justify-content: space-evenly;
     width: 100%;
   }
 
-  .bt>div>button{
+  .bt > div > button {
     padding: 1.2vmax;
   }
 
-  .bt>button:nth-child(2){
+  .bt > button:nth-child(2) {
     margin-left: 5px;
   }
 
-  .bt>h6{
+  .bt > h6 {
     margin-top: 15px;
   }
+   
+  #fnav{
+    display: initial;
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 100%;
+    height: 100%;
+    z-index: 99999;
+    background-color: rgb(238, 238, 238);
+    transition: all cubic-bezier(0.19, 1, 0.22, 1) 1s;
 }
 
+#fnav #flinks{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#flinks a{
+    text-decoration: none;
+    color: #121D12;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 12px;
+    letter-spacing: 1.5px;
+    margin-top: 10px;
+}
+
+#flinks a:nth-child(1){
+    margin-top: 0;
+}
+
+#fnavline{
+    width: 2px;
+    height: 120px;
+    background-color: #263826;
+    margin-left: 10px;
+    margin-top: 10px;
+}
+
+#fclosediv{
+    display: flex;
+    align-items: center;
+    position: absolute;
+    right: 10%;
+    top: 5%;   
+}
+
+#fclosediv p{
+    font-weight: 700;
+    color: rgb(255, 104, 104);
+    font-size: 12px;
+}
+
+#fclosediv i{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    color: #fff;
+    margin-left: 10px;
+    background-color: rgb(255, 104, 104);
+    box-shadow: 0px 5px 30px rgb(255, 104, 104);
+}
+}
